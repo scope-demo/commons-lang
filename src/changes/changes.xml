@@ -20,7 +20,7 @@
 This file is also used by the maven-changes-plugin to generate the release notes.
 Useful ways of finding items to add to this file are:
 
-1.  Add items when you fix a bug or add a feature (this makes the 
+1.  Add items when you fix a bug or add a feature (this makes the
 release process easy :-).
 
 2.  Do a JIRA search for tickets closed since the previous release.
@@ -32,7 +32,7 @@ To generate the release notes from this file:
 
 mvn changes:announcement-generate -Prelease-notes [-Dchanges.version=nnn]
 
-then tweak the formatting if necessary 
+then tweak the formatting if necessary
 and commit
 
 The <action> type attribute can be add,update,fix,remove.
@@ -81,6 +81,12 @@ The <action> type attribute can be add,update,fix,remove.
     <action issue="LANG-1177" type="add" dev="ggregory" due-to="Liel Fridman">Added indexesOf methods and simplified removeAllOccurences #471.</action>
     <action issue="LANG-1498" type="add" dev="ggregory" due-to="Lysergid, Gary Gregory">Add support of lambda value evaluation for defaulting methods #416.</action>
     <action issue="LANG-1463" type="fix" dev="ggregory" due-to="bbeckercscc, Gary Gregory">StringUtils abbreviate returns String of length greater than maxWidth #477.</action>
+    <action issue="LANG-1500" type="fix" dev="ggregory" due-to="contextshuffling">Test may fail due to a different order of fields returned by reflection api #480.</action>
+    <action                   type="update" dev="ggregory" due-to="Gary Gregory">Update test dependency: org.easymock:easymock 4.0.2 -> 4.1.</action>
+    <action                   type="update" dev="ggregory" due-to="Gary Gregory">Update test dependency: org.hamcrest:hamcrest 2.1 -> 2.2.</action>
+    <action                   type="update" dev="ggregory" due-to="Gary Gregory">Update test dependency: org.junit-pioneer:junit-pioneer 0.3.0 -> 0.3.3.</action>
+    <action                   type="update" dev="ggregory" due-to="Gary Gregory">Update build dependency: com.puppycrawl.tools:checkstyle 8.25 -> 8.26.</action>
+    <action issue="LANG-1501" type="fix" dev="ggregory" due-to="contextshuffling">Sort fields in ReflectionToStringBuilder for deterministic order #481.</action>
   </release>
 
   <release version="3.9" date="2019-04-09" description="New features and bug fixes. Requires Java 8, supports Java 9, 10, 11.">
@@ -97,7 +103,7 @@ The <action> type attribute can be add,update,fix,remove.
     <action issue="LANG-1422" type="add" dev="ggregory">Add null-safe StringUtils.valueOf(char[]) to delegate to String.valueOf(char[])</action>
     <action issue="LANG-1427" type="add" dev="ggregory">Add API org.apache.commons.lang3.SystemUtils.isJavaVersionAtMost(JavaVersion)</action>
     <action issue="LANG-1436" type="update" dev="aherbert">Consolidate the StringUtils equals and equalsIgnoreCase Javadoc and implementation</action>
-    <action                   type="update" dev="ggregory" due-to="Andrei Troie aft90">(doc) Fix javadoc for 'startIndex' parameter of StringUtils.join() methods. GitHub PR #412.</action>    
+    <action                   type="update" dev="ggregory" due-to="Andrei Troie aft90">(doc) Fix javadoc for 'startIndex' parameter of StringUtils.join() methods. GitHub PR #412.</action>
   </release>
 
   <release version="3.8.1" date="2018-09-19" description="This release is a bugfix for Restoring Bundle-SymbolicName in the MANIFEST.mf file.">
@@ -122,9 +128,9 @@ The <action> type attribute can be add,update,fix,remove.
     <action issue="LANG-1352" type="add" dev="pschumacher" due-to="Ruslan Sibgatullin">EnumUtils.getEnumIgnoreCase and isValidEnumIgnoreCase methods added</action>
     <action issue="LANG-1372" type="add" dev="pschumacher" due-to="Sérgio Ozaki">Add ToStringSummary annotation</action>
     <action issue="LANG-1356" type="add" dev="pschumacher" due-to="Yathos UG">Add bypass option for classes to recursive and reflective EqualsBuilder</action>
-    <action issue="LANG-1391" type="add" dev="ggregory" due-to="Sauro Matulli, Oleg Chubaryov">Improve Javadoc for StringUtils.isAnyEmpty(null)</action>   
-    <action issue="LANG-1393" type="add" dev="ggregory" due-to="Gary Gregory">Add API SystemUtils.String getEnvironmentVariable(final String name, final String defaultValue)</action>   
-    <action issue="LANG-1394" type="add" dev="ggregory" due-to="Sebb, Gary Gregory">org.apache.commons.lang3.SystemUtils should not write to System.err.</action>   
+    <action issue="LANG-1391" type="add" dev="ggregory" due-to="Sauro Matulli, Oleg Chubaryov">Improve Javadoc for StringUtils.isAnyEmpty(null)</action>
+    <action issue="LANG-1393" type="add" dev="ggregory" due-to="Gary Gregory">Add API SystemUtils.String getEnvironmentVariable(final String name, final String defaultValue)</action>
+    <action issue="LANG-1394" type="add" dev="ggregory" due-to="Sebb, Gary Gregory">org.apache.commons.lang3.SystemUtils should not write to System.err.</action>
     <action issue="LANG-1238" type="add" dev="ggregory" due-to="Christopher Cordeiro, Gary Gregory, Bruno P. Kinoshita, Oleg Chubaryov">Add RegexUtils class instead of overloading methods in StringUtils that take a regex to take precompiled Pattern.</action>
     <action issue="LANG-1390" type="add" dev="ggregory" due-to="Jochen Schalanda">StringUtils.join() with support for List&lt;?> with configurable start/end indices.</action>
     <action issue="LANG-1392" type="add" dev="pschumacher" due-to="Jeff Nelson">Methods for getting first non empty or non blank value</action>
