@@ -35,10 +35,4 @@ jobs:
       uses: undefinedlabs/scope-for-maven-action@v1
       with:
         dsn: ${{secrets.SCOPE_DSN}}
-        command: mvn -V apache-rat:check spotbugs:check javadoc:javadoc -Ddoclint=all package --file pom.xml
-    - uses: actions/upload-artifact@v1
-      if: failure()
-      with:
-        name: rat-file
-        path: target/rat.txt
-
+        command: mvn -V -Drat.skip=true package --file pom.xml
